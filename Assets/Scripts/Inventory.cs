@@ -16,6 +16,10 @@ public class Inventory : MonoBehaviour
 
     }
 
+    public int getNumBones()
+    {
+        return numBones;
+    }
 
     // Update is called once per frame
     void Update()
