@@ -4,5 +4,14 @@ using UnityEngine;
 
 public class MusicScript : MonoBehaviour
 {
- 
+
+    private void Awake()
+    {
+        GameObject[] musicObj = GameObject.FindGameObjectsWithTag("music");
+        if (musicObj.Length > 1)
+        {
+            Destroy(this.gameObject); 
+        }
+        DontDestroyOnLoad(this.gameObject); 
+    }
 }
