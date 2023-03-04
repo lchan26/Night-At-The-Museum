@@ -9,11 +9,19 @@ public class PlayerController : MonoBehaviour
     float speed = 5;
 
     private LinkedList<Vector2> keyPresses = new LinkedList<Vector2>();
+    
+    private Vector2 movement = Vector2.zero;
+
 
     // Start is called before the first frame update
     void Start()
     {
+
         
+    }
+
+    public Vector2 getMovementDirection(){
+        return movement;
     }
 
     // Update is called once per frame
@@ -53,9 +61,11 @@ public class PlayerController : MonoBehaviour
         }
 
         if (keyPresses.Count != 0) {
-        gameObject.GetComponent<Rigidbody2D>().velocity = speed * keyPresses.First.Value;
+        movement = speed * keyPresses.First.Value;
         }
-        else gameObject.GetComponent<Rigidbody2D>().velocity = Vector2.zero;
+        else movement = Vector2.zero;
+
+        gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
 
     public void addDirection(Vector2 direction){
