@@ -14,6 +14,13 @@ public class ActivateGlow : MonoBehaviour
     private float glowIntensity;
     [SerializeField]
     private GameObject player;
+    [SerializeField]
+    private float maxDist;
+    [SerializeField]
+    private float pulseMultiplier;
+    private bool isHovering;
+    [SerializeField]
+    private float speed;
 
     // Start is called before the first frame update
     void Start()
@@ -21,24 +28,53 @@ public class ActivateGlow : MonoBehaviour
         
     }
 
+    private void activateGlow()
+    {
+
+        mat.SetVector("_OutlineColor", outlineColor * glowIntensity * pulseMultiplier);
+        mat.SetFloat("_OutlineThickness", outlineThickness);
+    }
+
+    private void deactivateGlow()
+    {
+        mat.SetVector("_OutlineColor", Vector4.zero);
+        mat.SetFloat("_OutlineThickness", 0);
+    }
+
     // Update is called once per frame
     void Update()
     {
-        
+        float dist = Vector3.Distance(player.transform.position, transform.position);
+        if (dist < maxDist)
+        {
+            if (!isHovering)
+            {
+                pulseMultiplier = Mathf.Sin(Time.time * speed) * 0.5f + 0.5f;
+            }
+            else
+            {
+                pulseMultiplier = 1;
+            }
+            this.activateGlow();
+        }
+        else
+        {
+            this.deactivateGlow();
+        }
+
     }
 
     void OnMouseEnter()
     {
-        mat.SetVector("_OutlineColor", outlineColor * glowIntensity);
-        mat.SetFloat("_OutlineThickness", outlineThickness);
-
+        //this.activateGlow();
         player.GetComponent<Inventory>().SelectObject(this.gameObject);
+        isHovering = true;
     }
 
     void OnMouseExit()
     {
-        mat.SetVector("_OutlineColor", Vector4.zero);
-        mat.SetFloat("_OutlineThickness", 0);
+        //this.deactivateGlow();
         player.GetComponent<Inventory>().UnSelectObject();
+        isHovering = false;
     }
 }
