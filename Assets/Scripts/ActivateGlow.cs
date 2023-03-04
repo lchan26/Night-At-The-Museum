@@ -12,6 +12,8 @@ public class ActivateGlow : MonoBehaviour
     private Color outlineColor;
     [SerializeField]
     private float glowIntensity;
+    [SerializeField]
+    private GameObject player;
 
     // Start is called before the first frame update
     void Start()
@@ -29,11 +31,14 @@ public class ActivateGlow : MonoBehaviour
     {
         mat.SetVector("_OutlineColor", outlineColor * glowIntensity);
         mat.SetFloat("_OutlineThickness", outlineThickness);
+
+        player.GetComponent<Inventory>().SelectObject(this.gameObject);
     }
 
     void OnMouseExit()
     {
         mat.SetVector("_OutlineColor", Vector4.zero);
         mat.SetFloat("_OutlineThickness", 0);
+        player.GetComponent<Inventory>().UnSelectObject();
     }
 }
