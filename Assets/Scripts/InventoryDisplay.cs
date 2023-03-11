@@ -22,7 +22,7 @@ public class InventoryDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString();
+        this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString() + "/5";
         if (player.GetComponent<Inventory>().getNumBones() == 5)
         {
             SceneManager.LoadScene("EndScene");
