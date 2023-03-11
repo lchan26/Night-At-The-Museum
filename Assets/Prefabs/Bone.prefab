@@ -54,7 +54,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: 2f1517c5b9b0b494999d02e77010dc74, type: 2}
+  - {fileID: 2100000, guid: f005854660c67f3469e798eb7779c308, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -114,8 +114,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c93705138ed176a42a73188283d61f9e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  mat: {fileID: 2100000, guid: 2f1517c5b9b0b494999d02e77010dc74, type: 2}
+  plainMat: {fileID: 2100000, guid: f653af4da6ef77741984df655ddd8cb5, type: 2}
+  pulseMat: {fileID: 2100000, guid: f005854660c67f3469e798eb7779c308, type: 2}
+  glowMat: {fileID: 2100000, guid: 2f1517c5b9b0b494999d02e77010dc74, type: 2}
   outlineThickness: 0.02
   outlineColor: {r: 1, g: 0.8941177, b: 0.015686275, a: 1}
   glowIntensity: 3
   player: {fileID: 0}
+  maxDist: 0
+  speed: 0

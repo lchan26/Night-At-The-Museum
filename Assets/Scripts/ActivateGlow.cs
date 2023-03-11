@@ -5,7 +5,11 @@ using UnityEngine;
 public class ActivateGlow : MonoBehaviour
 {
     [SerializeField]
-    private Material mat;
+    private Material plainMat;
+    [SerializeField]
+    private Material pulseMat;
+    [SerializeField]
+    private Material glowMat;
     [SerializeField]
     private float outlineThickness;
     [SerializeField]
@@ -27,19 +31,6 @@ public class ActivateGlow : MonoBehaviour
         
     }
 
-    private void activateGlow()
-    {
-        Debug.Log("Activate glow");
-        mat.SetVector("_OutlineColor", outlineColor * glowIntensity * pulseMultiplier);
-        mat.SetFloat("_OutlineThickness", outlineThickness);
-    }
-
-    private void deactivateGlow()
-    {
-        mat.SetVector("_OutlineColor", Vector4.zero);
-        mat.SetFloat("_OutlineThickness", 0);
-    }
-
     // Update is called once per frame
     void Update()
     {
@@ -49,17 +40,16 @@ public class ActivateGlow : MonoBehaviour
             Debug.Log("Near bone");
             if (!isHovering)
             {
-                pulseMultiplier = Mathf.Sin(Time.time * speed) * 0.5f + 0.5f;
+                this.gameObject.GetComponent<SpriteRenderer>().material = pulseMat;
             }
             else
             {
-                pulseMultiplier = 1;
+                this.gameObject.GetComponent<SpriteRenderer>().material = glowMat;
             }
-            this.activateGlow();
         }
         else
         {
-            this.deactivateGlow();
+            this.gameObject.GetComponent<SpriteRenderer>().material = plainMat;
         }
 
     }
