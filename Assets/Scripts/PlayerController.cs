@@ -24,6 +24,11 @@ public class PlayerController : MonoBehaviour
         return movement;
     }
 
+    public Vector2 getMovementDirectionAnim()
+    {
+        return movement / speed;
+    }
+
     // Update is called once per frame
     void Update()
     {
