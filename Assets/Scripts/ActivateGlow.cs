@@ -16,8 +16,7 @@ public class ActivateGlow : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private float maxDist;
-    [SerializeField]
-    private float pulseMultiplier;
+    private float pulseMultiplier = 0;
     private bool isHovering;
     [SerializeField]
     private float speed;
@@ -30,7 +29,7 @@ public class ActivateGlow : MonoBehaviour
 
     private void activateGlow()
     {
-
+        Debug.Log("Activate glow");
         mat.SetVector("_OutlineColor", outlineColor * glowIntensity * pulseMultiplier);
         mat.SetFloat("_OutlineThickness", outlineThickness);
     }
@@ -47,6 +46,7 @@ public class ActivateGlow : MonoBehaviour
         float dist = Vector3.Distance(player.transform.position, transform.position);
         if (dist < maxDist)
         {
+            Debug.Log("Near bone");
             if (!isHovering)
             {
                 pulseMultiplier = Mathf.Sin(Time.time * speed) * 0.5f + 0.5f;
