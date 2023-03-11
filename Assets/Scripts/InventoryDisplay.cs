@@ -23,7 +23,7 @@ public class InventoryDisplay : MonoBehaviour
     void Update()
     {
         this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString();
-        if (player.GetComponent<Inventory>().getNumBones() == 1)
+        if (player.GetComponent<Inventory>().getNumBones() == 5)
         {
             SceneManager.LoadScene("EndScene");
         }
