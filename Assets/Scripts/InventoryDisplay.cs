@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using TMPro;
+using UnityEngine.SceneManagement;
 
 public class InventoryDisplay : MonoBehaviour
 {
@@ -22,5 +23,15 @@ public class InventoryDisplay : MonoBehaviour
     void Update()
     {
         this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString();
+        if (player.GetComponent<Inventory>().getNumBones() == 1)
+        {
+            SceneManager.LoadScene("EndScene");
+        }
     }
+
+
+
+    
 }
+
+
