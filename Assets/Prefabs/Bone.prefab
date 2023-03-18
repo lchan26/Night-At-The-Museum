@@ -119,3 +119,6 @@ MonoBehaviour:
   outlineColor: {r: 1, g: 0.8941177, b: 0.015686275, a: 1}
   glowIntensity: 3
   player: {fileID: 0}
+  maxDist: 0
+  pulseMultiplier: 0
+  speed: 0
