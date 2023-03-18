@@ -21,60 +21,42 @@ public class MoveAnimations : MonoBehaviour
     void Update()
     {
         this.dir = player.GetComponent<PlayerController>().getMovementDirectionAnim();
-        if (this.dir == Vector2.zero)
-        {
-            anim.SetBool("Idle", true);
-        }
-
-        if (!(this.dir == this.lastdir))
-        {
-            if (this.lastdir == Vector2.down)
-            {
-                anim.SetBool("MoveDown", false);
-            }
-
-            else if (this.lastdir == Vector2.up)
-            {
-                anim.SetBool("MoveUp", false);
-            }
-
-            else if (this.lastdir == Vector2.right)
-            {
-                anim.SetBool("MoveRight", false);
-            }
-
-            else if (this.lastdir == Vector2.left)
-            {
-                anim.SetBool("MoveLeft", false);
-            }
-        }
 
         if (this.dir == Vector2.down)
         {
-            anim.SetBool("MoveDown", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.down;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Down")))
+            {
+                anim.SetTrigger("MoveDown");
+            }
         }
 
         else if (this.dir == Vector2.up)
         {
-            anim.SetBool("MoveUp", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.up;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Up")))
+            {
+                anim.SetTrigger("MoveUp");
+            }
         }
 
         else if (this.dir == Vector2.right)
         {
-            anim.SetBool("MoveRight", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.right;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Right")))
+            {
+                anim.SetTrigger("MoveRight");
+            }
         }
 
         else if (this.dir == Vector2.left)
         {
-            anim.SetBool("MoveLeft", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.left;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Left")))
+            {
+                anim.SetTrigger("MoveLeft");
+            }
+        }
+
+        else
+        {
+            anim.SetTrigger("Idle");
         }
 
     }
