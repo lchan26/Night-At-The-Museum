@@ -8,7 +8,7 @@ public class MainMenuButtonScript : MonoBehaviour
     
     public void PlayGame()
     {
-        SceneManager.LoadScene("TilemapStuff");
+        SceneManager.LoadScene("Colliders");
     }
 
     public void GoToTutorial()
