@@ -39,6 +39,9 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Temporary
+    uniqueID: 2827064791
+    locked: 0
   - name: Background
     uniqueID: 2166797983
     locked: 0
