@@ -11,8 +11,11 @@ public class Timer : MonoBehaviour
     [SerializeField]
     public float timerVal = 300;
     [SerializeField]
+    public float dangerVal = 30;
+    [SerializeField]
     private TextMeshProUGUI timer;
     public bool timerIsRunning = true;
+    public bool startedCour = false;
 
 
     // Start is called before the first frame update
@@ -50,6 +53,29 @@ public class Timer : MonoBehaviour
 
         float minutes = Mathf.FloorToInt(timeDisplay / 60);
         float seconds = Mathf.FloorToInt(timeDisplay % 60);
-        this.timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        if (Mathf.FloorToInt(timeDisplay) <= dangerVal)
+        {
+            this.timer.color = Color.red;
+            if (startedCour == false)
+            {
+                StartCoroutine(BlinkRoutine());
+                startedCour = true;
+            }
+        }
+        else
+        {
+            this.timer.text = string.Format("{0:00}:{1:00}", minutes, seconds);
+        }
+    }
+
+    IEnumerator BlinkRoutine()
+    {
+        while (true)
+        {
+            this.timer.text = string.Format("{0:00}:{1:00}", Mathf.FloorToInt(timerVal / 60), Mathf.FloorToInt(timerVal % 60));
+            yield return new WaitForSeconds(0.4f);
+            this.timer.text = "";
+            yield return new WaitForSeconds(0.4f);
+        }
     }
 }
