@@ -22,6 +22,36 @@ public class MoveAnimations : MonoBehaviour
     {
         this.dir = player.GetComponent<PlayerController>().getMovementDirectionAnim();
 
+        if(this.dir != Vector2.zero)
+        {
+            anim.SetBool("Moving", true);
+            if(this.dir == Vector2.right)
+            {
+                anim.SetBool("FacingX", true);
+                anim.SetBool("FacingPositive", true);
+            }
+            else if(this.dir == Vector2.left)
+            {
+                anim.SetBool("FacingX", true);
+                anim.SetBool("FacingPositive", false);
+            }
+            else if(this.dir == Vector2.up)
+            {
+                anim.SetBool("FacingX", false);
+                anim.SetBool("FacingPositive", true);
+            }
+            else
+            {
+                anim.SetBool("FacingX", false);
+                anim.SetBool("FacingPositive", false);
+            }
+        }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
+
+        /*
         if (this.dir == Vector2.down)
         {
             if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Down")))
@@ -35,6 +65,7 @@ public class MoveAnimations : MonoBehaviour
             if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Up")))
             {
                 anim.SetTrigger("MoveUp");
+                anim.SetBool("MoveUp", true);
             }
         }
 
@@ -58,6 +89,7 @@ public class MoveAnimations : MonoBehaviour
         {
             anim.SetTrigger("Idle");
         }
+        */
 
     }
 }
