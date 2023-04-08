@@ -340,7 +340,7 @@ GameObject:
   - component: {fileID: 118419563}
   - component: {fileID: 118419562}
   m_Layer: 7
-  m_Name: Impsostor
+  m_Name: Imposostor
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
