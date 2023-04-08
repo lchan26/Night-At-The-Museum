@@ -21,61 +21,75 @@ public class MoveAnimations : MonoBehaviour
     void Update()
     {
         this.dir = player.GetComponent<PlayerController>().getMovementDirectionAnim();
-        if (this.dir == Vector2.zero)
+
+        if(this.dir != Vector2.zero)
         {
-            anim.SetBool("Idle", true);
-        }
-
-        if (!(this.dir == this.lastdir))
-        {
-            if (this.lastdir == Vector2.down)
+            anim.SetBool("Moving", true);
+            if(this.dir == Vector2.right)
             {
-                anim.SetBool("MoveDown", false);
+                anim.SetBool("FacingX", true);
+                anim.SetBool("FacingPositive", true);
             }
-
-            else if (this.lastdir == Vector2.up)
+            else if(this.dir == Vector2.left)
             {
-                anim.SetBool("MoveUp", false);
+                anim.SetBool("FacingX", true);
+                anim.SetBool("FacingPositive", false);
             }
-
-            else if (this.lastdir == Vector2.right)
+            else if(this.dir == Vector2.up)
             {
-                anim.SetBool("MoveRight", false);
+                anim.SetBool("FacingX", false);
+                anim.SetBool("FacingPositive", true);
             }
-
-            else if (this.lastdir == Vector2.left)
+            else
             {
-                anim.SetBool("MoveLeft", false);
+                anim.SetBool("FacingX", false);
+                anim.SetBool("FacingPositive", false);
             }
         }
+        else
+        {
+            anim.SetBool("Moving", false);
+        }
 
+        /*
         if (this.dir == Vector2.down)
         {
-            anim.SetBool("MoveDown", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.down;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Down")))
+            {
+                anim.SetTrigger("MoveDown");
+            }
         }
 
         else if (this.dir == Vector2.up)
         {
-            anim.SetBool("MoveUp", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.up;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Up")))
+            {
+                anim.SetTrigger("MoveUp");
+                anim.SetBool("MoveUp", true);
+            }
         }
 
         else if (this.dir == Vector2.right)
         {
-            anim.SetBool("MoveRight", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.right;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Right")))
+            {
+                anim.SetTrigger("MoveRight");
+            }
         }
 
         else if (this.dir == Vector2.left)
         {
-            anim.SetBool("MoveLeft", true);
-            anim.SetBool("Idle", false);
-            this.lastdir = Vector2.left;
+            if (!(anim.GetCurrentAnimatorStateInfo(0).IsName("Left")))
+            {
+                anim.SetTrigger("MoveLeft");
+            }
         }
+
+        else
+        {
+            anim.SetTrigger("Idle");
+        }
+        */
 
     }
 }
