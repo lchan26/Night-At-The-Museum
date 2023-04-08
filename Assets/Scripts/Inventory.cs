@@ -5,8 +5,9 @@ using UnityEngine;
 public class Inventory : MonoBehaviour
 {
     private GameObject selectedObject;
-
+    private GameObject selectedKey;
     private int numBones;
+    private int numKeys;
 
     [SerializeField] private float maxDistance;
 
@@ -20,6 +21,17 @@ public class Inventory : MonoBehaviour
     {
         return numBones;
     }
+    public int getNumKeys()
+    {
+        return numKeys;
+    }
+    // public void keysDecrease()
+    // {
+    //     if(numKeys > 0)
+    //     {
+    //         numKeys --;
+    //     }
+    // }
 
     // Update is called once per frame
     void Update()
@@ -39,6 +51,18 @@ public class Inventory : MonoBehaviour
                     selectedObject = null;
                 }
             }
+
+            if(selectedKey != null)
+            {
+                float dist = Vector3.Distance(selectedKey.transform.position, transform.position);
+                //checking if the distance between player and object isn't too far
+                if(dist < maxDistance)
+                {
+                    numKeys++;
+                    Destroy(selectedKey);
+                    selectedKey = null;
+                }
+            }
         }
     }
 
@@ -50,5 +74,15 @@ public class Inventory : MonoBehaviour
     public void UnSelectObject()
     {
         selectedObject = null;
+    }
+
+    public void SelectKey(GameObject newObject)
+    {
+        selectedKey = newObject;
+    }
+
+    public void UnSelectKey()
+    {
+        selectedKey = null;
     }
 }

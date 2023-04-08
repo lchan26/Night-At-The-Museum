@@ -15,8 +15,7 @@ public class doorDeactivate : MonoBehaviour
 
     }
     void checkPlayerHaveKey() {
-        //playerHaveKey = player.GetComponent<Inventory>().getNumKeys() > 0;
-        playerHaveKey = true;
+        playerHaveKey = player.GetComponent<Inventory>().getNumKeys() > 0;
     }
 
     // Update is called once per frame
@@ -24,11 +23,14 @@ public class doorDeactivate : MonoBehaviour
     {
         float dist = Vector3.Distance(player.transform.position, this.gameObject.transform.position);
         if (dist < maxDist) {
-            checkPlayerHaveKey();
-            if (playerHaveKey) {
-                Destroy(this.gameObject);
+            if (Input.GetMouseButtonDown(0))
+            {
+                checkPlayerHaveKey();
+                if (playerHaveKey) {
+                    Destroy(this.gameObject);
+                    // player.GetComponent<Inventory>().keysDecrease();
+                }
             }
-  
         }
     }
 }
