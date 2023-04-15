@@ -12,6 +12,8 @@ public class PlayerController : MonoBehaviour
     
     private Vector2 movement = Vector2.zero;
 
+    public GameObject securityGuard;
+
 
     // Start is called before the first frame update
     void Start()
@@ -82,10 +84,14 @@ public class PlayerController : MonoBehaviour
         keyPresses.Remove(target);
         }
 
-    void OnTriggerEnter2D(Collider2D col) {
+    public void OnTriggerEnter2D(Collider2D col) {
         //print("a");
-        if (col.gameObject.tag == "Security") {
+        if (col.gameObject.tag == "SecurityGuard") {
             transform.position = new Vector3(-10.23f, -12.51f, 0);
+        }
+        if (col.gameObject.tag == "SecurityCamera") {
+            securityGuard.GetComponent<Pathfinding.Patrol>().enabled = false;
+            securityGuard.GetComponent<Pathfinding.AIDestinationSetter>().enabled = true;
         }
     }
 }       
