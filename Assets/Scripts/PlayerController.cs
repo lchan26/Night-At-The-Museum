@@ -81,4 +81,11 @@ public class PlayerController : MonoBehaviour
         LinkedListNode<Vector2> target = keyPresses.Find(direction);
         keyPresses.Remove(target);
         }
+
+    void OnTriggerEnter2D(Collider2D col) {
+        //print("a");
+        if (col.gameObject.tag == "Security") {
+            transform.position = new Vector3(-10.23f, -12.51f, 0);
+        }
+    }
 }       
