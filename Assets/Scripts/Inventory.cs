@@ -9,6 +9,8 @@ public class Inventory : MonoBehaviour
     private int numBones;
     private int numKeys;
 
+    public static int bonesCounter = 0;
+
     [SerializeField] private float maxDistance;
 
     // Start is called before the first frame update
@@ -84,5 +86,17 @@ public class Inventory : MonoBehaviour
     public void UnSelectKey()
     {
         selectedKey = null;
+    }
+
+    void Awake()
+    {
+        //Let the gameobject persist over the scenes
+        DontDestroyOnLoad(gameObject);
+        //Check if the control instance is null
+        if (bonesCounter == null)
+        {
+            //This instance becomes the single instance available
+            bonesCounter = this.getNumBones();
+        }
     }
 }
