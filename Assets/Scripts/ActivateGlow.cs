@@ -57,14 +57,14 @@ public class ActivateGlow : MonoBehaviour
     void OnMouseEnter()
     {
         //this.activateGlow();
-        player.GetComponent<Inventory>().SelectObject(this.gameObject);
+        // player.GetComponent<Inventory>().SelectObject(this.gameObject);
         isHovering = true;
     }
 
     void OnMouseExit()
     {
         //this.deactivateGlow();
-        player.GetComponent<Inventory>().UnSelectObject();
+        // player.GetComponent<Inventory>().UnSelectObject();
         isHovering = false;
     }
 }

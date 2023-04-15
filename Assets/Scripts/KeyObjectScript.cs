@@ -54,14 +54,12 @@ public class KeyObjectScript : MonoBehaviour
 
     void OnMouseEnter()
     {
-        //this.activateGlow();
         player.GetComponent<Inventory>().SelectKey(this.gameObject);
         isHovering = true;
     }
 
     void OnMouseExit()
     {
-        //this.deactivateGlow();
         player.GetComponent<Inventory>().UnSelectKey();
         isHovering = false;
     }
