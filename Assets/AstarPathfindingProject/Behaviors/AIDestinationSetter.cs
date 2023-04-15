@@ -18,6 +18,8 @@ namespace Pathfinding {
 		public Transform target;
 		IAstarAI ai;
 
+		private float time = 5;
+
 		void OnEnable () {
 			ai = GetComponent<IAstarAI>();
 			// Update the destination right before searching for a path as well.
@@ -34,6 +36,12 @@ namespace Pathfinding {
 		/// <summary>Updates the AI's destination every frame</summary>
 		void Update () {
 			if (target != null && ai != null) ai.destination = target.position;
+			time -= Time.deltaTime;
+			if (time <= 0) {
+				time = 5;
+				gameObject.GetComponent<Pathfinding.Patrol>().enabled = true;
+				gameObject.GetComponent<Pathfinding.AIDestinationSetter>().enabled = false;
+			}
 		}
 	}
 }
