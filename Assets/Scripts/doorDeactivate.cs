@@ -9,6 +9,13 @@ public class doorDeactivate : MonoBehaviour
     [SerializeField]
     private float maxDist;
     private bool playerHaveKey = false;
+
+    public AudioSource lockedDoorAudioSource;
+    public AudioClip lockedDoorClip;
+    public AudioSource unlockedDoorAudioSource;
+    public AudioClip unlockedDoorClip;
+    public float volume=0.5f;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -27,8 +34,14 @@ public class doorDeactivate : MonoBehaviour
             {
                 checkPlayerHaveKey();
                 if (playerHaveKey) {
+                    unlockedDoorAudioSource.PlayOneShot(unlockedDoorClip, volume);
                     Destroy(this.gameObject);
                     // player.GetComponent<Inventory>().keysDecrease();
+                }
+                else 
+                {
+                    //play rattle audio
+                    lockedDoorAudioSource.PlayOneShot(lockedDoorClip, volume);
                 }
             }
         }
