@@ -72,7 +72,7 @@ public class PlayerController : MonoBehaviour
         }
         else movement = Vector2.zero;
 
-        gameObject.GetComponent<Rigidbody2D>().velocity = movement;
+        //gameObject.GetComponent<Rigidbody2D>().velocity = movement;
     }
 
     public void addDirection(Vector2 direction){
