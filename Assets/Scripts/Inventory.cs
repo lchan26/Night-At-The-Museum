@@ -9,7 +9,7 @@ public class Inventory : MonoBehaviour
     private int numBones;
     private int numKeys;
 
-    public static int bonesCounter = 0;
+    public static int bonesCounter;
 
     [SerializeField] private float maxDistance;
 
@@ -49,6 +49,7 @@ public class Inventory : MonoBehaviour
                 if(dist < maxDistance)
                 {
                     numBones++;
+                    bonesCounter++;
                     Destroy(selectedObject);
                     selectedObject = null;
                 }
@@ -92,11 +93,9 @@ public class Inventory : MonoBehaviour
     {
         //Let the gameobject persist over the scenes
         DontDestroyOnLoad(gameObject);
-        //Check if the control instance is null
-        if (bonesCounter == null)
-        {
-            //This instance becomes the single instance available
-            bonesCounter = this.getNumBones();
-        }
+        
+        bonesCounter = numBones; //don't think this actually works lmao
+        
     }
+
 }

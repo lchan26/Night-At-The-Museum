@@ -188,6 +188,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (5)
@@ -327,6 +331,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (8)
@@ -800,6 +808,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (7)
@@ -1299,6 +1311,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (9)
@@ -2179,6 +2195,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (3)
@@ -2260,6 +2280,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (4)
@@ -2341,6 +2365,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (6)
@@ -2422,6 +2450,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (1)
@@ -3174,6 +3206,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 5
+  securityGuard: {fileID: 0}
 --- !u!50 &1154453870
 Rigidbody2D:
   serializedVersion: 4
@@ -7422,6 +7455,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (2)
@@ -9204,6 +9241,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone
@@ -11330,6 +11371,10 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 1208656560}
     m_Modifications:
+    - target: {fileID: 1520689105915165380, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
+      propertyPath: player
+      value: 
+      objectReference: {fileID: 1154453866}
     - target: {fileID: 6790172983828789738, guid: 2c02f0ecf8098452faa1f24cd6e40c04, type: 3}
       propertyPath: m_Name
       value: Bone (10)

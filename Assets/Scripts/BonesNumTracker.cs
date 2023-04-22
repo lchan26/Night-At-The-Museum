@@ -15,8 +15,7 @@ public class BonesNumTracker : MonoBehaviour
 
     void Update()
     {
-     this.score.text = "Final Score: " + (Inventory.bonesCounter).ToString();
+     this.score.text = "Final Score: " + (Inventory.bonesCounter * 100).ToString();
     }
 }
-//so if you want to read the current boneNum: BonesNumTracker.bones.boneCount
 
