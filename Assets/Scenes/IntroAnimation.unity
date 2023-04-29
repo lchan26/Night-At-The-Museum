@@ -749,6 +749,7 @@ GameObject:
   - component: {fileID: 446360213}
   - component: {fileID: 446360212}
   - component: {fileID: 446360211}
+  - component: {fileID: 446360219}
   m_Layer: 0
   m_Name: Abinger
   m_TagString: Untagged
@@ -931,6 +932,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &446360219
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 446360210}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b58dcf0ae6c8bac428667b6740367008, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  segment:
+  - {x: 0, y: 3}
+  - {x: 4, y: 0}
+  - {x: 0, y: 3}
+  moveSpeed: 4
 --- !u!1001 &453817510
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -5139,6 +5157,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   player: {fileID: 446360210}
   maxDist: 3
+  lockedDoorAudioSource: {fileID: 0}
+  lockedDoorClip: {fileID: 0}
+  unlockedDoorAudioSource: {fileID: 0}
+  unlockedDoorClip: {fileID: 0}
+  volume: 0.5
 --- !u!61 &613181870
 BoxCollider2D:
   m_ObjectHideFlags: 0
