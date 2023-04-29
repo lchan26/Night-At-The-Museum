@@ -9,11 +9,13 @@ public class SecurityGuardController : MonoBehaviour
 
     private Vector3 prevPos;
     private Vector3 currPos;
+    private GameObject flashlight;
     // Start is called before the first frame update
     void Start()
     {
         currPos = transform.position;
         prevPos = transform.position;
+        flashlight = transform.GetChild(0).gameObject;
     }
 
     // Update is called once per frame
@@ -42,41 +44,45 @@ public class SecurityGuardController : MonoBehaviour
             Vector3 rotationVector = new Vector3(0, 0, 0);
 
             // // If attached to flashlight
+            if (currentDir == 0) {
+                rotationVector.z = 180;
+                flashlight.transform.rotation = Quaternion.Euler(rotationVector);
+            }
+            else if (currentDir == 1) {
+                rotationVector.z = 0;
+                flashlight.transform.rotation = Quaternion.Euler(rotationVector);
+            }
+            else if (currentDir == 2) {
+                rotationVector.z = 90;
+                flashlight.transform.rotation = Quaternion.Euler(rotationVector);
+            }
+            else if (currentDir == 3) {
+                rotationVector.z = 270;
+                flashlight.transform.rotation = Quaternion.Euler(rotationVector);
+            }
+
+            // If attached to security guard
             // if (currentDir == 0) {
-            //     rotationVector.z = 180;
-            //     transform.rotation = Quaternion.Euler(rotationVector);
-            // }
-            // else if (currentDir == 1) {
             //     rotationVector.z = 0;
             //     transform.rotation = Quaternion.Euler(rotationVector);
             // }
-            // else if (currentDir == 2) {
-            //     rotationVector.z = 90;
+            // else if (currentDir == 1) {
+            //     rotationVector.z = 180;
             //     transform.rotation = Quaternion.Euler(rotationVector);
             // }
-            // else if (currentDir == 3) {
+            // else if (currentDir == 2) {
             //     rotationVector.z = 270;
             //     transform.rotation = Quaternion.Euler(rotationVector);
             // }
-
-            // If attached to security guard
-            if (currentDir == 0) {
-                rotationVector.z = 0;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-            else if (currentDir == 1) {
-                rotationVector.z = 180;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-            else if (currentDir == 2) {
-                rotationVector.z = 270;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
-            else if (currentDir == 3) {
-                rotationVector.z = 90;
-                transform.rotation = Quaternion.Euler(rotationVector);
-            }
+            // else if (currentDir == 3) {
+            //     rotationVector.z = 90;
+            //     transform.rotation = Quaternion.Euler(rotationVector);
+            //}
             prevPos = transform.position;
         }
+    }
+
+    public int getMovementDirection(){
+        return currentDir;
     }
 }
