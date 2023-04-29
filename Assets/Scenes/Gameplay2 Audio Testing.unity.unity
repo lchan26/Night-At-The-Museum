@@ -1600,7 +1600,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: db2e40d7d57124f1e932ee2694131756, type: 3}
+  m_audioClip: {fileID: 8300000, guid: adc70dc7b85584d6c921e478b4358c84, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
@@ -1608,7 +1608,7 @@ AudioSource:
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
-  Priority: 128
+  Priority: 200
   DopplerLevel: 1
   MinDistance: 1
   MaxDistance: 500
@@ -6958,11 +6958,11 @@ PrefabInstance:
     - target: {fileID: -2009294646982832787, guid: e032c7b515d404b259703bfe86a01f9c, type: 3}
       propertyPath: lockedDoorClip
       value: 
-      objectReference: {fileID: 8300000, guid: 210b79289258146ff811c8291c80ca23, type: 3}
+      objectReference: {fileID: 8300000, guid: 4e689d534c2d9450face24d40b8bd3d2, type: 3}
     - target: {fileID: -2009294646982832787, guid: e032c7b515d404b259703bfe86a01f9c, type: 3}
       propertyPath: unlockedDoorClip
       value: 
-      objectReference: {fileID: 8300000, guid: db2e40d7d57124f1e932ee2694131756, type: 3}
+      objectReference: {fileID: 8300000, guid: adc70dc7b85584d6c921e478b4358c84, type: 3}
     - target: {fileID: -2009294646982832787, guid: e032c7b515d404b259703bfe86a01f9c, type: 3}
       propertyPath: lockedDoorAudioSource
       value: 
@@ -7468,7 +7468,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: 210b79289258146ff811c8291c80ca23, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 4e689d534c2d9450face24d40b8bd3d2, type: 3}
   m_PlayOnAwake: 0
   m_Volume: 1
   m_Pitch: 1
