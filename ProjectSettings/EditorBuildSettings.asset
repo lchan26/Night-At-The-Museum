@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/TutorialScreen.unity
     guid: dc7c41f0ae552411eb6c49204334e588
   - enabled: 1
+    path: Assets/Scenes/TutorialScreen 2.unity
+    guid: 1c5b2030462fa4b07b6c3efc93b92a16
+  - enabled: 1
     path: Assets/Scenes/EndScene.unity
     guid: f11f0692386bf4b5087dfaec8e38a307
   - enabled: 1

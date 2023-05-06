@@ -10,4 +10,9 @@ public class BackButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("MainMenuScreen");
     }
+
+    public void GoToNextPage()
+    {
+        SceneManager.LoadScene("TutorialScreen 2");
+    }
 }
