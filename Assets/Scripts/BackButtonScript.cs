@@ -15,4 +15,9 @@ public class BackButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("TutorialScreen 2");
     }
+
+    public void GoToPrevPage()
+    {
+        SceneManager.LoadScene("TutorialScreen");
+    }
 }

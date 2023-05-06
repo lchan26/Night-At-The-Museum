@@ -833,7 +833,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3e25259c0c5ff435c912da6292640a0f, type: 3}
+  m_Sprite: {fileID: 21300000, guid: a2a6faa4ce7d94bdf9cdc1521fe16518, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -864,7 +864,7 @@ GameObject:
   - component: {fileID: 1924845219}
   - component: {fileID: 1924845218}
   m_Layer: 5
-  m_Name: Next
+  m_Name: Prev
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -888,7 +888,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 6.5915833, y: 0.3070631}
+  m_AnchoredPosition: {x: -6.82, y: 0.3070631}
   m_SizeDelta: {x: 40, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1924845218
@@ -937,7 +937,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1196019687}
         m_TargetAssemblyTypeName: BackButtonScript, Assembly-CSharp
-        m_MethodName: GoToNextPage
+        m_MethodName: GoToPrevPage
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
