@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class MusicScript : MonoBehaviour
 {
@@ -13,5 +14,16 @@ public class MusicScript : MonoBehaviour
             Destroy(this.gameObject); 
         }
         DontDestroyOnLoad(this.gameObject); 
+    }
+
+    void Update()
+    {
+         Scene currentScene = SceneManager.GetActiveScene();
+
+         string currentSceneName = currentScene.name;
+
+         if (currentSceneName == "Colliders") {
+            Destroy(this.gameObject);
+         }
     }
 }
