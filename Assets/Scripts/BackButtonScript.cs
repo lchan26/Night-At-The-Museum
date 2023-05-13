@@ -20,4 +20,8 @@ public class BackButtonScript : MonoBehaviour
     {
         SceneManager.LoadScene("TutorialScreen");
     }
+    public void Quit()
+    {
+        Application.Quit();
+    }
 }
