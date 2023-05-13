@@ -35,6 +35,7 @@ public class ActivateGlow : MonoBehaviour
     void Update()
     {
         float dist = Vector3.Distance(player.transform.position, transform.position);
+
         if (dist < maxDist)
         {
             Debug.Log("Near bone");
@@ -66,5 +67,10 @@ public class ActivateGlow : MonoBehaviour
         //this.deactivateGlow();
         // player.GetComponent<Inventory>().UnSelectObject();
         isHovering = false;
+    }
+
+    private void OnTriggerEnter2D(Collider2D collision)
+    {
+
     }
 }

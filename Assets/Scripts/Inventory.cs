@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.InteropServices.WindowsRuntime;
 using UnityEngine;
 
 public class Inventory : MonoBehaviour
@@ -67,6 +68,27 @@ public class Inventory : MonoBehaviour
                 }
             }
         }
+    }
+
+    public bool PickUpBone(Vector2 boneLocation)
+    {
+        Vector2 playerPos = new Vector2(transform.position.x, transform.position.y);
+        if (Vector2.Distance(boneLocation, playerPos) < maxDistance){
+            numBones++;
+            return true;
+        }
+        return false;
+    }
+
+    public bool PickUpKey(Vector2 keyLocation)
+    {
+        Vector2 playerPos = new Vector2(transform.position.x, transform.position.y);
+        if (Vector2.Distance(keyLocation, playerPos) < maxDistance)
+        {
+            numKeys++;
+            return true;
+        }
+        return false;
     }
 
     public void SelectObject(GameObject newObject)

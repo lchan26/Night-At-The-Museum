@@ -17,13 +17,12 @@ public class SelectKey : MonoBehaviour
     {
         
     }
-    void OnMouseEnter()
-    {
-        player.GetComponent<Inventory>().SelectKey(this.gameObject);
-    }
 
-    void OnMouseExit()
+    private void OnMouseDown()
     {
-        player.GetComponent<Inventory>().UnSelectKey();
+        if (player.GetComponent<Inventory>().PickUpKey(new Vector2(transform.position.x, transform.position.y)))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
