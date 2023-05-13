@@ -2940,6 +2940,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1058511880}
   - component: {fileID: 1058511879}
+  - component: {fileID: 1058511881}
   m_Layer: 0
   m_Name: Global Volume
   m_TagString: Untagged
@@ -2979,6 +2980,21 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1058511881
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1058511878}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a61f7263958039740817f6a5f6cc0fdb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  player: {fileID: 1154453866}
+  securityGuard: {fileID: 1849331305}
+  m_Volume: {fileID: 1058511879}
 --- !u!1 &1071064321
 GameObject:
   m_ObjectHideFlags: 0
@@ -9771,7 +9787,7 @@ MonoBehaviour:
   radius: 0.65
   height: 2
   canMove: 1
-  maxSpeed: 3
+  maxSpeed: 4
   gravity: {x: NaN, y: NaN, z: NaN}
   groundMask:
     serializedVersion: 2
@@ -9795,7 +9811,7 @@ MonoBehaviour:
   endReachedDistance: 0.2
   alwaysDrawGizmos: 0
   slowWhenNotFacingTarget: 1
-  whenCloseToDestination: 0
+  whenCloseToDestination: 1
   constrainInsideGraph: 0
 --- !u!114 &1849331308
 MonoBehaviour:

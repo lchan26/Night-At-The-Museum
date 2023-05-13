@@ -17,7 +17,7 @@ public class Inventory : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-
+        ScoreTracker.score = 0;
     }
 
     public int getNumBones()
