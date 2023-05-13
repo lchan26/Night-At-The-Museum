@@ -19,13 +19,11 @@ public class SelectBone : MonoBehaviour
 
     }
 
-    void OnMouseEnter()
+    private void OnMouseDown()
     {
-        player.GetComponent<Inventory>().SelectObject(this.gameObject);
-    }
-
-    void OnMouseExit()
-    {
-        player.GetComponent<Inventory>().UnSelectObject();
+        if(player.GetComponent<Inventory>().PickUpBone(new Vector2(transform.position.x, transform.position.y)))
+        {
+            Destroy(this.gameObject);
+        }
     }
 }
