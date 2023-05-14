@@ -9,9 +9,9 @@ public class Timer : MonoBehaviour
 {
 
     [SerializeField]
-    public float timerVal = 300;
+    public float timerVal = 60;
     [SerializeField]
-    public float dangerVal = 30;
+    public float dangerVal = 15;
     [SerializeField]
     private TextMeshProUGUI timer;
     public bool timerIsRunning = true;
@@ -38,7 +38,14 @@ public class Timer : MonoBehaviour
                 timerVal = 0;
                 timerIsRunning = false;
                 DisplayTime(timerVal);
-                SceneManager.LoadScene("EndScene");
+                if(ScoreTracker.score > 5)
+                {
+                    SceneManager.LoadScene("EndScene");
+                }
+                else
+                {
+                    SceneManager.LoadScene("EndSceneLoss");
+                }
             }
             DisplayTime(timerVal);
         }

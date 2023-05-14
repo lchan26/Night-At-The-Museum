@@ -107,6 +107,7 @@ public class PlayerController : MonoBehaviour
     public void OnTriggerEnter2D(Collider2D col) {
         //print("a");
         if (col.gameObject.tag == "SecurityGuard") {
+            col.gameObject.GetComponent<SecurityGuardController>().toBegin();
             transform.position = new Vector3(-10.23f, -12.51f, 0);
         }
         if (col.gameObject.tag == "SecurityCamera") {

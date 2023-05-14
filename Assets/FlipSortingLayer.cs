@@ -21,13 +21,19 @@ public class FlipSortingLayer : MonoBehaviour
 
     private void OnTriggerStay2D(Collider2D collision)
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground2";
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        if(collision.tag == "Player")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = "Foreground2";
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = 0;
+        }
     }
 
     private void OnTriggerExit2D(Collider2D collision)
     {
-        this.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = defaultSortingLayer;
-        this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = defaultSortingOrder;
+        if (collision.tag == "Player")
+        {
+            this.gameObject.GetComponent<SpriteRenderer>().sortingLayerName = defaultSortingLayer;
+            this.gameObject.GetComponent<SpriteRenderer>().sortingOrder = defaultSortingOrder;
+        }
     }
 }

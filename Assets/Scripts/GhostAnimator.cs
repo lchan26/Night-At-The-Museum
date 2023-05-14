@@ -22,8 +22,6 @@ public class GhostAnimator : MonoBehaviour
     {
         this.dir = ghost.GetComponent<SecurityGuardController>().getMovementDirection();
 
-        print(this.dir);
-
         if(this.dir >= 0)
         {
             anim.SetBool("Moving", true);

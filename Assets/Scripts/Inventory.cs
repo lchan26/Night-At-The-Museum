@@ -75,6 +75,8 @@ public class Inventory : MonoBehaviour
         Vector2 playerPos = new Vector2(transform.position.x, transform.position.y);
         if (Vector2.Distance(boneLocation, playerPos) < maxDistance){
             numBones++;
+            ScoreTracker.score = ScoreTracker.score + 1;
+            Debug.Log(ScoreTracker.score);
             return true;
         }
         return false;
@@ -112,10 +114,7 @@ public class Inventory : MonoBehaviour
     }
 
     void Awake()
-    {
-        //Let the gameobject persist over the scenes
-        DontDestroyOnLoad(gameObject);
-        
+    {  
         bonesCounter = numBones; //don't think this actually works lmao
         
     }

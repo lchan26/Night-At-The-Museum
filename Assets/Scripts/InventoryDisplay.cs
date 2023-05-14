@@ -11,6 +11,8 @@ public class InventoryDisplay : MonoBehaviour
     private GameObject player;
     [SerializeField]
     private TextMeshProUGUI bones;
+    [SerializeField]
+    private GameObject keyImage;
 
 
     // Start is called before the first frame update
@@ -22,10 +24,14 @@ public class InventoryDisplay : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString() + "/5";
-        if (player.GetComponent<Inventory>().getNumBones() == 5)
+        this.bones.text = player.GetComponent<Inventory>().getNumBones().ToString();
+        if(player.GetComponent<Inventory>().getNumKeys() != 0)
         {
-            SceneManager.LoadScene("EndScene");
+            keyImage.SetActive(true);
+        }
+        else
+        {
+            keyImage.SetActive(false);
         }
     }
 

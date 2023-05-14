@@ -1,3 +1,4 @@
+using Pathfinding;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -10,9 +11,16 @@ public class SecurityGuardController : MonoBehaviour
     private Vector3 prevPos;
     private Vector3 currPos;
     private GameObject flashlight;
+
+    private Vector3 startPos;
+
+    [SerializeField]
+    private GameObject player;
     // Start is called before the first frame update
     void Start()
     {
+        startPos = transform.position;
+
         currPos = transform.position;
         prevPos = transform.position;
         flashlight = transform.GetChild(0).gameObject;
@@ -21,6 +29,19 @@ public class SecurityGuardController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        Vector2 thisPos = new Vector2(transform.position.x, transform.position.y);
+        Vector2 playerPos = new Vector2(player.transform.position.x, player.transform.position.y);
+        if(Vector2.Distance(thisPos, playerPos) < 8)
+        {
+            this.gameObject.GetComponent<Patrol>().enabled = false;
+            this.gameObject.GetComponent<AIDestinationSetter>().enabled = true;
+        }
+        else
+        {
+            this.gameObject.GetComponent<Patrol>().enabled = true;
+            this.gameObject.GetComponent<AIDestinationSetter>().enabled = false;
+        }
+
         currPos = transform.position;
         List<float> dotProducts = new List<float>();
         // Index 0 is up, 1 is down, 2 is right, 3 is left
@@ -84,5 +105,10 @@ public class SecurityGuardController : MonoBehaviour
 
     public int getMovementDirection(){
         return currentDir;
+    }
+
+    public void toBegin()
+    {
+        transform.position = startPos;
     }
 }

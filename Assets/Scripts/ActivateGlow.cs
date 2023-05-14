@@ -28,7 +28,7 @@ public class ActivateGlow : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        player = GameObject.Find("Abinger");
     }
 
     // Update is called once per frame
